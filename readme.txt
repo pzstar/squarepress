@@ -27,6 +27,10 @@ SquarePress is a flexible responsive multipurpose theme compatible with all brow
 
 
 == Upgrade Notice ==
+= 1.0.5 - Apr 20, 2020 =
+* Skip Content and Keyboard navigation fixed
+* Header Image option for logo removed and added WordPress default custom logo option
+
 = 1.0.4 - Feb 17, 2020 =
 * Demo Import Option removed to comply with latest Theme submission guideline.
 

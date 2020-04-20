@@ -17,6 +17,7 @@
 
     <body <?php body_class(); ?>>
         <div id="sq-page">
+            <a class="skip-link screen-reader-text" href="#sq-content"><?php esc_html_e('Skip to content', 'square'); ?></a>
             <?php
             $square_header_bg = get_theme_mod('square_header_bg', 'sq-white');
             $square_sticky_header = get_theme_mod('square_disable_sticky_header');
@@ -49,23 +50,27 @@
                 <div class="sq-header">
                     <div class="sq-container">
                         <div id="sq-site-branding">
-                            <?php if (get_header_image()) : ?>
+                            <?php
+                            if (function_exists('has_custom_logo') && has_custom_logo()) {
+                                the_custom_logo();
+                            } elseif (get_header_image()) {
+                                ?>
                                 <a href="<?php echo esc_url(home_url('/')); ?>" rel="home">
                                     <img src="<?php header_image(); ?>" alt="<?php bloginfo('name'); ?>">
                                 </a>
-                            <?php else: ?>
-                                <?php if (is_front_page()) : ?>
+                            <?php } else { ?>
+                                <?php if (is_front_page()) { ?>
                                     <h1 class="sq-site-title"><a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?></a></h1>
-                                <?php else : ?>
+                                <?php } else { ?>
                                     <p class="sq-site-title"><a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?></a></p>
-                                <?php endif; ?>
+                                <?php } ?>
                                 <p class="sq-site-description"><?php bloginfo('description'); ?></p>
-                            <?php endif; // End header image check.  ?>
+                            <?php } // End header image check.?>
                         </div><!-- .site-branding -->
 
-                        <div class="sq-toggle-nav">
+                        <a href="#" class="sq-toggle-nav">
                             <span></span>
-                        </div>
+                        </a>
 
                         <nav id="sq-site-navigation" class="sq-main-navigation">
                             <?php

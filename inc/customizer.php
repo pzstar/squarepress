@@ -101,6 +101,20 @@ function squarepress_customize_register($wp_customize) {
         'label' => esc_html__('LinkedIn', 'squarepress')
     ));
 
+    $wp_customize->add_setting('squarepress_top_header_upgrade_text', array(
+        'sanitize_callback' => 'square_sanitize_text'
+    ));
+
+    $wp_customize->add_control(new Square_Upgrade_Text($wp_customize, 'squarepress_top_header_upgrade_text', array(
+        'section' => 'squarepress_top_header',
+        'label' => esc_html__('For more top header settings,', 'square'),
+        'choices' => array(
+            esc_html__('Option to add menu, widget, html or social icons', 'square'),
+            esc_html__('Option to add unlimited and any social media', 'square')
+        ),
+        'priority' => 100
+    )));
+
     /* Tab Section */
     $wp_customize->add_setting('squarepress_tab_heading', array(
         'sanitize_callback' => 'square_sanitize_text',
@@ -244,6 +258,22 @@ function squarepress_customize_register($wp_customize) {
         ));
     }
 
+    $wp_customize->add_setting('squarepress_team_upgrade_text', array(
+        'sanitize_callback' => 'square_sanitize_text'
+    ));
+
+    $wp_customize->add_control(new Square_Upgrade_Text($wp_customize, 'squarepress_team_upgrade_text', array(
+        'section' => 'squarepress_team_sec',
+        'label' => esc_html__('For more layouts and settings,', 'square'),
+        'choices' => array(
+            esc_html__('Unlimited team blocks', 'square'),
+            esc_html__('4 team styles', 'square'),
+            esc_html__('Configure no of column to display in a row', 'square'),
+            esc_html__('Multiple background option(image, gradient, video) for the section', 'square')
+        ),
+        'priority' => 100
+    )));
+
     /* ============TESTIMONIAL SECTION============ */
     $wp_customize->add_section('squarepress_testimonial_sec', array(
         'title' => esc_html__('Testimonial Section', 'square'),
@@ -349,6 +379,21 @@ function squarepress_customize_register($wp_customize) {
         'label' => esc_html__('Background Image', 'squarepress'),
         'section' => 'squarepress_testimonial_sec',
         'settings' => 'squarepress_testimonial_bg',
+    )));
+
+    $wp_customize->add_setting('squarepress_testimonial_upgrade_text', array(
+        'sanitize_callback' => 'square_sanitize_text'
+    ));
+
+    $wp_customize->add_control(new Square_Upgrade_Text($wp_customize, 'squarepress_testimonial_upgrade_text', array(
+        'section' => 'squarepress_testimonial_sec',
+        'label' => esc_html__('For more layouts and settings,', 'square'),
+        'choices' => array(
+            esc_html__('Unlimited testimonial blocks', 'square'),
+            esc_html__('4 testimonial styles', 'square'),
+            esc_html__('Multiple background option(image, gradient, video) for the section', 'square')
+        ),
+        'priority' => 100
     )));
 
     $wp_customize->add_setting('squarepress_featured_box_heading', array(

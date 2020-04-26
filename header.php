@@ -16,6 +16,7 @@
     </head>
 
     <body <?php body_class(); ?>>
+        <?php wp_body_open(); ?>
         <div id="sq-page">
             <a class="skip-link screen-reader-text" href="#sq-content"><?php esc_html_e('Skip to content', 'square'); ?></a>
             <?php

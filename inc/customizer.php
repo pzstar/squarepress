@@ -422,7 +422,7 @@ function squarepress_customize_register($wp_customize) {
 add_action('customize_register', 'squarepress_customize_register', 50);
 
 function squarepress_customizer_script() {
-    wp_enqueue_style('squarepress-customizer-style', get_stylesheet_directory_uri() . '/inc/customizer-control.css', array('wp-color-picker'), '1.0.0');
+    wp_enqueue_style('squarepress-customizer-style', get_stylesheet_directory_uri() . '/inc/customizer-control.css', array('wp-color-picker'), SQUAREPRESS_VER);
 }
 
 add_action('customize_controls_enqueue_scripts', 'squarepress_customizer_script');

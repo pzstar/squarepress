@@ -1,5 +1,9 @@
 <?php
 
+if (!defined('SQUAREPRESS_VER')) {
+    define('SQUAREPRESS_VER', '1.0.6');
+}
+
 function squarepress_dequeue_script() {
     wp_dequeue_style('square-fonts');
     wp_dequeue_script('square-custom');
@@ -16,11 +20,11 @@ function squarepress_slug_setup() {
 add_action('after_setup_theme', 'squarepress_slug_setup');
 
 function squarepress_enqueue_scripts() {
-    wp_enqueue_style('squarepress-parent-style', get_template_directory_uri() . '/style.css');
-    wp_enqueue_style('squarepress-style', get_stylesheet_directory_uri() . '/style.css', array('squarepress-parent-style'), '1.0');
+    wp_enqueue_style('squarepress-parent-style', get_template_directory_uri() . '/style.css', array(), SQUAREPRESS_VER);
+    wp_enqueue_style('squarepress-style', get_stylesheet_directory_uri() . '/style.css', array('squarepress-parent-style'), SQUAREPRESS_VER);
     wp_add_inline_style('squarepress-style', squarepress_dymanic_styles());
-    wp_enqueue_script('squarepress-custom', get_stylesheet_directory_uri() . '/js/squarepress-custom.js', array('jquery'), '1.0', true);
-    wp_enqueue_style('squarepress-fonts', squarepress_fonts_url(), array(), null);
+    wp_enqueue_script('squarepress-custom', get_stylesheet_directory_uri() . '/js/squarepress-custom.js', array('jquery'), SQUAREPRESS_VER, true);
+    wp_enqueue_style('squarepress-fonts', squarepress_fonts_url(), array(), NULL);
 }
 
 function squarepress_fonts_url() {
@@ -78,9 +82,9 @@ function squarepress_dymanic_styles() {
     $custom_css = "
         body .sq-top-header,
         body .sq-tab li.sq-active,
-        body .bx-wrapper .bx-pager.bx-default-pager a, 
-        body .bx-wrapper .bx-pager.bx-default-pager a.active,
-        body .bx-wrapper .bx-pager.bx-default-pager a:hover,
+        body .sq-testimonial-slider.owl-carousel button.owl-dot, 
+        body .sq-testimonial-slider.owl-carousel button.owl-dot.active,
+        body .sq-testimonial-slider.owl-carousel button.owl-dot:hover,
         body .sq-featured-post.theme-colored-box{background:" . sanitize_hex_color($color) . "}
 
         

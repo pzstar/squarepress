@@ -5,7 +5,7 @@
  Author:       Hash Themes
  Author URI:   https://hashthemes.com
  Template:     square
- Version:      1.0.5
+ Version:      1.0.6
  License:      GNU General Public License v2 or later
  License URI:  http://www.gnu.org/licenses/gpl-2.0.html
  Tags:         two-columns, right-sidebar, custom-background, custom-menu, editor-style, featured-images, footer-widgets, theme-options, threaded-comments, translation-ready, portfolio, education, blog, custom-logo
@@ -180,7 +180,8 @@ p {
 }
 
 
-#sq-home-slider-section .bx-wrapper .bx-controls-direction a{
+#sq-home-slider-section .owl-carousel .owl-nav button.owl-prev, 
+#sq-home-slider-section .owl-carousel .owl-nav button.owl-next{
     height: 70px;
     width: 30px;
     bottom: auto;
@@ -188,17 +189,17 @@ p {
     transform: translateY(-50%);
 }
 
-#sq-home-slider-section .bx-wrapper .bx-controls-direction a .fa{
+#sq-home-slider-section .owl-carousel .owl-nav button .fa{
     line-height: 70px;
     width: 30px;
 }
 
-#sq-home-slider-section .bx-wrapper .bx-prev{
+#sq-home-slider-section .owl-carousel .owl-nav button.owl-prev{
     left: 0;
     margin-left: 0;
 }
 
-#sq-home-slider-section .bx-wrapper .bx-next{
+#sq-home-slider-section .owl-carousel .owl-nav button.owl-next{
     right: 0;
     margin-right: 0;
 }
@@ -437,21 +438,23 @@ p {
     margin: 0 auto 15px;
 }
 
-#sq-testimonial-section .bx-wrapper .bx-pager{
+.sq-testimonial-slider.owl-carousel .owl-dots{
     position: relative;
-    bottom: 0;
     padding-top: 30px;
+    text-align: center;
 }
 
-.bx-wrapper .bx-pager.bx-default-pager a{
+.sq-testimonial-slider.owl-carousel button.owl-dot{
     background: #FFF;
     height: 8px;
     width: 10px;
     transition: all 0.3s ease;
     background: #5bc2ce;
+    margin: 0 5px;
+    border-radius: 5px;
 }
 
-.bx-wrapper .bx-pager.bx-default-pager a.active{
+.sq-testimonial-slider.owl-carousel button.owl-dot.active{
     width: 30px;
     background: #5bc2ce;
 }

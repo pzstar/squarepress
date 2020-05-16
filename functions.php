@@ -1,7 +1,7 @@
 <?php
 
 if (!defined('SQUAREPRESS_VER')) {
-    define('SQUAREPRESS_VER', '1.0.6');
+    define('SQUAREPRESS_VER', '1.0.7');
 }
 
 function squarepress_dequeue_script() {

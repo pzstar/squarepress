@@ -5,21 +5,21 @@
  Author:       Hash Themes
  Author URI:   https://hashthemes.com
  Template:     square
- Version:      1.0.7
+ Version:      1.1.1
  License:      GNU General Public License v2 or later
  License URI:  http://www.gnu.org/licenses/gpl-2.0.html
  Tags:         two-columns, right-sidebar, custom-background, custom-menu, editor-style, featured-images, footer-widgets, theme-options, threaded-comments, translation-ready, portfolio, education, blog, custom-logo
  Text Domain:  squarepress
+ Tested up to: 6.1
+ Requires PHP: 5.0
 */
-
 
 body,
 button,
 input,
 select,
 textarea {
-    font-family: 'Poppins', sans-serif;
-    font-size: 16px;
+    font-family: var(--square-body-family, 'Poppins', sans-serif);
 }
 
 h1,
@@ -27,9 +27,15 @@ h2,
 h3,
 h4,
 h5,
-h6 {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 500;
+h6,
+.sq-slide-cap-title,
+.sq-tab li,
+.sq-site-title{
+    font-family: var(--square-h-family, 'Poppins', sans-serif);
+}
+
+.sq-main-navigation .sq-menu{
+    font-family: var(--square-menu-family, 'Karla', sans-serif);
 }
 
 h1{
@@ -65,27 +71,6 @@ p {
     margin:0 0 20px;
 }
 
-.comment-list .vcard .fn,
-.comment-list .comment-metadata,
-#sq-masthead,
-.sq-main-title,
-.sq-site-title,
-.sq-slide-cap-title,
-.sq-slide-cap-desc,
-.sq-tab li,
-#sq-colophon,
-.pagination,
-.woocommerce nav.woocommerce-pagination,
-.woocommerce div.product p.price, 
-.woocommerce div.product span.price{
-    font-family: 'Poppins', sans-serif;
-}
-
-.sq-main-navigation a{
-    font-family: 'Karla', sans-serif;
-}
-
-
 .sq-section-subtitle{
     text-align: center;
     width: 80%;
@@ -107,7 +92,7 @@ p {
 }
 
 .sq-top-header{
-    background: #5BC2CE;
+    background: var(--square-template-color, #5BC2CE);
     color: #FFF;
     padding-top: 15px;
     padding-bottom: 60px; 
@@ -207,7 +192,6 @@ p {
 .sq-section-title{
     font-size: 34px;
     text-align: center;
-    font-weight: 500;
 }
 
 .sq-section-title:after{
@@ -268,7 +252,7 @@ p {
 }
 
 .sq-featured-post.theme-colored-box{
-    background: #5bc2ce;
+    background: var(--square-template-color, #5bc2ce);
 }
 
 .sq-featured-post.theme-colored-box .sq-featured-icon .fa,
@@ -355,7 +339,7 @@ p {
 }
 
 .sq-tab li.sq-active{
-    background: #5bc2ce;
+    background: var(--square-template-color, #5bc2ce);
 }
 
 .sq-tab li.sq-active a,
@@ -449,14 +433,18 @@ p {
     height: 8px;
     width: 10px;
     transition: all 0.3s ease;
-    background: #5bc2ce;
+    background: var(--square-template-color, #5bc2ce);
     margin: 0 5px;
     border-radius: 5px;
 }
 
 .sq-testimonial-slider.owl-carousel button.owl-dot.active{
     width: 30px;
-    background: #5bc2ce;
+    background: var(--square-template-color, #5bc2ce);
+}
+
+.sq-testimonial-slider.owl-carousel button.owl-dot:hover{
+    background: var(--square-template-color, #5bc2ce);
 }
 
 #sq-middle-footer .sq-container{
@@ -491,7 +479,9 @@ p {
         position: relative;
         transform: none;
     }
-
+    #sq-site-navigation{
+        border-color: var(--square-template-color, #5bc2ce);
+    }
     #sq-home-slider-section img{
         height: 500px;
         object-fit: cover;

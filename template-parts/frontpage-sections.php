@@ -11,8 +11,8 @@ if (is_array($square_page_array)) {
         <?php
         for ($i = 1; $i < 4; $i++) {
             if ($i == 1) {
-                $square_slider_title = get_theme_mod('square_slider_title1', __('Free WordPress Themes', 'square'));
-                $square_slider_subtitle = get_theme_mod('square_slider_subtitle1', __('Create website in no time', 'square'));
+                $square_slider_title = get_theme_mod('square_slider_title1', __('Free WordPress Themes', 'squarepress'));
+                $square_slider_subtitle = get_theme_mod('square_slider_subtitle1', __('Create website in no time', 'squarepress'));
                 $square_slider_image = get_theme_mod('square_slider_image1', get_template_directory_uri() . '/images/bg.jpg');
             } else {
                 $square_slider_title = get_theme_mod('square_slider_title' . $i);
@@ -23,7 +23,7 @@ if (is_array($square_page_array)) {
             if ($square_slider_image) {
                 ?>
                 <div class="sq-slide sq-slide-count<?php echo $i; ?>">
-                    <img src="<?php echo esc_url($square_slider_image); ?>" alt="<?php esc_attr_e('Slider', 'square') ?>">
+                    <img src="<?php echo esc_url($square_slider_image); ?>" alt="<?php esc_attr_e('Slider', 'squarepress') ?>">
 
                     <?php if ($square_slider_title || $square_slider_subtitle) { ?>
                         <div class="sq-container">
@@ -79,7 +79,7 @@ if (is_array($square_page_array)) {
                                 <?php
                                 if ($square_enable_featured_link) {
                                     ?>
-                                    <a href="<?php the_permalink(); ?>" class="sq-featured-readmore"><?php echo esc_html__('Read More', 'square') ?><i class="fa fa-angle-right"></i></a>
+                                    <a href="<?php the_permalink(); ?>" class="sq-featured-readmore"><?php echo esc_html__('Read More', 'squarepress') ?><i class="fa fa-angle-right"></i></a>
                                     <?php
                                 }
                                 ?>
@@ -362,7 +362,7 @@ if (!$square_disable_logo_sec) {
                     $image = wp_get_attachment_image_src($square_client_logo_image_single, 'full');
                     if ($image) {
                         $image_alt = get_post_meta($square_client_logo_image_single, '_wp_attachment_image_alt', true);
-                        $image_alt_text = $image_alt ? $image_alt : __('Logo', 'square');
+                        $image_alt_text = $image_alt ? $image_alt : __('Logo', 'squarepress');
                         ?>
                         <img src="<?php echo esc_url($image[0]); ?>" alt="<?php echo esc_html($image_alt_text) ?>">
                         <?php

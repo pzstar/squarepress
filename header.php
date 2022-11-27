@@ -18,7 +18,7 @@
     <body <?php body_class(); ?>>
         <?php wp_body_open(); ?>
         <div id="sq-page">
-            <a class="skip-link screen-reader-text" href="#sq-content"><?php esc_html_e('Skip to content', 'square'); ?></a>
+            <a class="skip-link screen-reader-text" href="#sq-content"><?php esc_html_e('Skip to content', 'squarepress'); ?></a>
             <?php
             $square_header_bg = get_theme_mod('square_header_bg', 'sq-white');
             $square_sticky_header = get_theme_mod('square_disable_sticky_header');

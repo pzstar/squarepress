@@ -6,12 +6,26 @@ function squarepress_customize_register($wp_customize) {
     $wp_customize->remove_control('square_about_image_header');
     $wp_customize->remove_control('square_about_image_stack');
     $wp_customize->get_setting('square_header_bg')->default = 'sq-white';
+    $wp_customize->get_setting('square_body_family')->default = 'Poppins';
+    $wp_customize->get_setting('square_h_family')->default = 'Poppins';
+    $wp_customize->get_setting('square_menu_family')->default = 'Karla';
+    $wp_customize->get_setting('square_menu_style')->default = '400';
+    
+    $wp_customize->add_panel('squarepress_header_panel', array(
+        'title' => esc_html__('Header Settings', 'squarepress'),
+        'priority' => 22,
+    ));
+    
+    $wp_customize->get_section('square_header_setting_sec')->panel = 'squarepress_header_panel';
+    $wp_customize->get_section('square_header_setting_sec')->title = esc_html__('Main Header', 'squarepress');
+    $wp_customize->get_section('square_header_setting_sec')->priority = 15;
 
     //HEADER SETTINGS
 
     $wp_customize->add_section('squarepress_top_header', array(
-        'title' => esc_html__('Top Header Settings', 'squarepress'),
-        'panel' => 'square_general_settings_panel',
+        'title' => esc_html__('Top Header', 'squarepress'),
+        'panel' => 'squarepress_header_panel',
+        'priority' => 10,
     ));
 
     $wp_customize->add_setting('squarepress_left_header_text', array(
@@ -29,7 +43,7 @@ function squarepress_customize_register($wp_customize) {
         'sanitize_callback' => 'square_sanitize_text'
     ));
 
-    $wp_customize->add_control(new Square_Info_Text($wp_customize, 'squarepress_right_header_info', array(
+    $wp_customize->add_control(new Square_Upgrade_Info_Control($wp_customize, 'squarepress_right_header_info', array(
         'settings' => 'squarepress_right_header_info',
         'section' => 'squarepress_top_header',
         'label' => esc_html__('Top Right Header Socials Icons', 'squarepress')
@@ -105,12 +119,12 @@ function squarepress_customize_register($wp_customize) {
         'sanitize_callback' => 'square_sanitize_text'
     ));
 
-    $wp_customize->add_control(new Square_Upgrade_Text($wp_customize, 'squarepress_top_header_upgrade_text', array(
+    $wp_customize->add_control(new Square_Upgrade_Info_Control($wp_customize, 'squarepress_top_header_upgrade_text', array(
         'section' => 'squarepress_top_header',
-        'label' => esc_html__('For more top header settings,', 'square'),
+        'label' => esc_html__('For more top header settings,', 'squarepress'),
         'choices' => array(
-            esc_html__('Option to add menu, widget, html or social icons', 'square'),
-            esc_html__('Option to add unlimited and any social media', 'square')
+            esc_html__('Option to add menu, widget, html or social icons', 'squarepress'),
+            esc_html__('Option to add unlimited and any social media', 'squarepress')
         ),
         'priority' => 100
     )));
@@ -120,7 +134,7 @@ function squarepress_customize_register($wp_customize) {
         'sanitize_callback' => 'square_sanitize_text',
     ));
 
-    $wp_customize->add_control(new Square_Customize_Heading($wp_customize, 'squarepress_tab_heading', array(
+    $wp_customize->add_control(new Square_Heading_Control($wp_customize, 'squarepress_tab_heading', array(
         'settings' => 'squarepress_tab_heading',
         'section' => 'square_tab_sec',
         'label' => esc_html__('Tab Title / SubTitle', 'squarepress'),
@@ -156,7 +170,7 @@ function squarepress_customize_register($wp_customize) {
         'default' => get_stylesheet_directory_uri() . '/images/banner-image.jpg'
     ));
 
-    $wp_customize->add_control(new Square_Customize_Heading($wp_customize, 'squarepress_tab_bg_heading', array(
+    $wp_customize->add_control(new Square_Heading_Control($wp_customize, 'squarepress_tab_bg_heading', array(
         'settings' => 'squarepress_tab_bg_heading',
         'section' => 'square_tab_sec',
         'label' => esc_html__('Background Image', 'squarepress')
@@ -174,7 +188,7 @@ function squarepress_customize_register($wp_customize) {
 
     /* ============TEAM SECTION============ */
     $wp_customize->add_section('squarepress_team_sec', array(
-        'title' => esc_html__('Team Section', 'square'),
+        'title' => esc_html__('Team Section', 'squarepress'),
         'panel' => 'square_home_settings_panel'
     ));
 
@@ -186,7 +200,7 @@ function squarepress_customize_register($wp_customize) {
     $wp_customize->add_control('squarepress_disable_team_sec', array(
         'settings' => 'squarepress_disable_team_sec',
         'section' => 'squarepress_team_sec',
-        'label' => esc_html__('Disable Team Section ', 'square'),
+        'label' => esc_html__('Disable Team Section ', 'squarepress'),
         'type' => 'checkbox',
     ));
 
@@ -195,7 +209,7 @@ function squarepress_customize_register($wp_customize) {
         'sanitize_callback' => 'square_sanitize_text',
     ));
 
-    $wp_customize->add_control(new Square_Customize_Heading($wp_customize, 'squarepress_team_heading', array(
+    $wp_customize->add_control(new Square_Heading_Control($wp_customize, 'squarepress_team_heading', array(
         'settings' => 'squarepress_team_heading',
         'section' => 'squarepress_team_sec',
         'label' => esc_html__('Team Title / SubTitle ', 'squarepress'),
@@ -229,10 +243,10 @@ function squarepress_customize_register($wp_customize) {
             'sanitize_callback' => 'square_sanitize_text'
         ));
 
-        $wp_customize->add_control(new Square_Customize_Heading($wp_customize, 'squarepress_team_header' . $i, array(
+        $wp_customize->add_control(new Square_Heading_Control($wp_customize, 'squarepress_team_header' . $i, array(
             'settings' => 'squarepress_team_header' . $i,
             'section' => 'squarepress_team_sec',
-            'label' => esc_html__('Team ', 'square') . $i
+            'label' => esc_html__('Team ', 'squarepress') . $i
         )));
 
         $wp_customize->add_setting('squarepress_team_page' . $i, array(
@@ -243,7 +257,7 @@ function squarepress_customize_register($wp_customize) {
             'settings' => 'squarepress_team_page' . $i,
             'section' => 'squarepress_team_sec',
             'type' => 'dropdown-pages',
-            'label' => esc_html__('Select a Page', 'square')
+            'label' => esc_html__('Select a Page', 'squarepress')
         ));
 
         $wp_customize->add_setting('squarepress_team_designation' . $i, array(
@@ -262,21 +276,21 @@ function squarepress_customize_register($wp_customize) {
         'sanitize_callback' => 'square_sanitize_text'
     ));
 
-    $wp_customize->add_control(new Square_Upgrade_Text($wp_customize, 'squarepress_team_upgrade_text', array(
+    $wp_customize->add_control(new Square_Upgrade_Info_Control($wp_customize, 'squarepress_team_upgrade_text', array(
         'section' => 'squarepress_team_sec',
-        'label' => esc_html__('For more layouts and settings,', 'square'),
+        'label' => esc_html__('For more layouts and settings,', 'squarepress'),
         'choices' => array(
-            esc_html__('Unlimited team blocks', 'square'),
-            esc_html__('4 team styles', 'square'),
-            esc_html__('Configure no of column to display in a row', 'square'),
-            esc_html__('Multiple background option(image, gradient, video) for the section', 'square')
+            esc_html__('Unlimited team blocks', 'squarepress'),
+            esc_html__('4 team styles', 'squarepress'),
+            esc_html__('Configure no of column to display in a row', 'squarepress'),
+            esc_html__('Multiple background option(image, gradient, video) for the section', 'squarepress')
         ),
         'priority' => 100
     )));
 
     /* ============TESTIMONIAL SECTION============ */
     $wp_customize->add_section('squarepress_testimonial_sec', array(
-        'title' => esc_html__('Testimonial Section', 'square'),
+        'title' => esc_html__('Testimonial Section', 'squarepress'),
         'panel' => 'square_home_settings_panel'
     ));
 
@@ -288,7 +302,7 @@ function squarepress_customize_register($wp_customize) {
     $wp_customize->add_control('squarepress_disable_testimonial_sec', array(
         'settings' => 'squarepress_disable_testimonial_sec',
         'section' => 'squarepress_testimonial_sec',
-        'label' => esc_html__('Disable Testimonial Section ', 'square'),
+        'label' => esc_html__('Disable Testimonial Section ', 'squarepress'),
         'type' => 'checkbox',
     ));
 
@@ -297,7 +311,7 @@ function squarepress_customize_register($wp_customize) {
         'sanitize_callback' => 'square_sanitize_text',
     ));
 
-    $wp_customize->add_control(new Square_Customize_Heading($wp_customize, 'squarepress_testimonial_heading', array(
+    $wp_customize->add_control(new Square_Heading_Control($wp_customize, 'squarepress_testimonial_heading', array(
         'settings' => 'squarepress_testimonial_heading',
         'section' => 'squarepress_testimonial_sec',
         'label' => esc_html__('Testimonial Title / SubTitle ', 'squarepress'),
@@ -331,10 +345,10 @@ function squarepress_customize_register($wp_customize) {
             'sanitize_callback' => 'square_sanitize_text'
         ));
 
-        $wp_customize->add_control(new Square_Customize_Heading($wp_customize, 'squarepress_testimonial_header' . $i, array(
+        $wp_customize->add_control(new Square_Heading_Control($wp_customize, 'squarepress_testimonial_header' . $i, array(
             'settings' => 'squarepress_testimonial_header' . $i,
             'section' => 'squarepress_testimonial_sec',
-            'label' => esc_html__('Testimonial ', 'square') . $i
+            'label' => esc_html__('Testimonial ', 'squarepress') . $i
         )));
 
         $wp_customize->add_setting('squarepress_testimonial_page' . $i, array(
@@ -345,7 +359,7 @@ function squarepress_customize_register($wp_customize) {
             'settings' => 'squarepress_testimonial_page' . $i,
             'section' => 'squarepress_testimonial_sec',
             'type' => 'dropdown-pages',
-            'label' => esc_html__('Select a Page', 'square')
+            'label' => esc_html__('Select a Page', 'squarepress')
         ));
 
         $wp_customize->add_setting('squarepress_testimonial_designation' . $i, array(
@@ -364,7 +378,7 @@ function squarepress_customize_register($wp_customize) {
         'sanitize_callback' => 'square_sanitize_text',
     ));
 
-    $wp_customize->add_control(new Square_Customize_Heading($wp_customize, 'squarepress_testimonial_bg_heading', array(
+    $wp_customize->add_control(new Square_Heading_Control($wp_customize, 'squarepress_testimonial_bg_heading', array(
         'settings' => 'squarepress_testimonial_bg_heading',
         'section' => 'squarepress_testimonial_sec',
         'label' => esc_html__('Background Image', 'squarepress')
@@ -385,13 +399,13 @@ function squarepress_customize_register($wp_customize) {
         'sanitize_callback' => 'square_sanitize_text'
     ));
 
-    $wp_customize->add_control(new Square_Upgrade_Text($wp_customize, 'squarepress_testimonial_upgrade_text', array(
+    $wp_customize->add_control(new Square_Upgrade_Info_Control($wp_customize, 'squarepress_testimonial_upgrade_text', array(
         'section' => 'squarepress_testimonial_sec',
-        'label' => esc_html__('For more layouts and settings,', 'square'),
+        'label' => esc_html__('For more layouts and settings,', 'squarepress'),
         'choices' => array(
-            esc_html__('Unlimited testimonial blocks', 'square'),
-            esc_html__('4 testimonial styles', 'square'),
-            esc_html__('Multiple background option(image, gradient, video) for the section', 'square')
+            esc_html__('Unlimited testimonial blocks', 'squarepress'),
+            esc_html__('4 testimonial styles', 'squarepress'),
+            esc_html__('Multiple background option(image, gradient, video) for the section', 'squarepress')
         ),
         'priority' => 100
     )));
@@ -400,7 +414,7 @@ function squarepress_customize_register($wp_customize) {
         'sanitize_callback' => 'square_sanitize_text',
     ));
 
-    $wp_customize->add_control(new Square_Customize_Heading($wp_customize, 'squarepress_featured_box_heading', array(
+    $wp_customize->add_control(new Square_Heading_Control($wp_customize, 'squarepress_featured_box_heading', array(
         'settings' => 'squarepress_featured_box_heading',
         'section' => 'square_featured_page_sec',
         'label' => esc_html__('Enable Theme Colored Box', 'squarepress'),
@@ -414,7 +428,7 @@ function squarepress_customize_register($wp_customize) {
     $wp_customize->add_control('squarepress_enable_colored_box', array(
         'settings' => 'squarepress_enable_colored_box',
         'section' => 'square_featured_page_sec',
-        'label' => esc_html__('Enable/Disable ', 'square'),
+        'label' => esc_html__('Enable/Disable ', 'squarepress'),
         'type' => 'checkbox',
     ));
 }

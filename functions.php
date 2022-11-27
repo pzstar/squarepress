@@ -1,7 +1,9 @@
 <?php
 
 if (!defined('SQUAREPRESS_VER')) {
-    define('SQUAREPRESS_VER', '1.0.7');
+    $squarepress_get_theme = wp_get_theme();
+    $squarepress_version = $squarepress_get_theme->Version;
+    define('SQUAREPRESS_VER', $squarepress_version);
 }
 
 function squarepress_dequeue_script() {
@@ -14,7 +16,7 @@ add_action('wp_print_scripts', 'squarepress_dequeue_script', 100);
 add_action('wp_enqueue_scripts', 'squarepress_enqueue_scripts');
 
 function squarepress_slug_setup() {
-    load_child_theme_textdomain('square', get_stylesheet_directory() . '/languages');
+    load_child_theme_textdomain('squarepress', get_stylesheet_directory() . '/languages');
 }
 
 add_action('after_setup_theme', 'squarepress_slug_setup');
@@ -80,20 +82,8 @@ function squarepress_dymanic_styles() {
     $squarepress_testimonial_bg = get_theme_mod('squarepress_testimonial_bg', get_stylesheet_directory_uri() . '/images/banner-image.jpg');
 
     $custom_css = "
-        body .sq-top-header,
-        body .sq-tab li.sq-active,
-        body .sq-testimonial-slider.owl-carousel button.owl-dot, 
-        body .sq-testimonial-slider.owl-carousel button.owl-dot.active,
-        body .sq-testimonial-slider.owl-carousel button.owl-dot:hover,
-        body .sq-featured-post.theme-colored-box{background:" . sanitize_hex_color($color) . "}
-
-        
         #sq-tab-section{background-image: url(" . esc_url($squarepress_tab_bg) . ")}
         #sq-testimonial-section{background-image: url(" . esc_url($squarepress_testimonial_bg) . ")}
-
-        @media screen and (max-width: 900px){
-            #sq-site-navigation{border-color:" . sanitize_hex_color($color) . "}
-        }
     ";
 
     return squarepress_css_strip_whitespace($custom_css);

@@ -16,9 +16,11 @@ function squarepress_customize_register($wp_customize) {
         'priority' => 22,
     ));
     
+    $wp_customize->get_section('title_tagline')->panel = 'squarepress_header_panel';
     $wp_customize->get_section('square_header_setting_sec')->panel = 'squarepress_header_panel';
     $wp_customize->get_section('square_header_setting_sec')->title = esc_html__('Main Header', 'squarepress');
     $wp_customize->get_section('square_header_setting_sec')->priority = 15;
+    $wp_customize->get_section('title_tagline')->priority = 5;
 
     //HEADER SETTINGS
 

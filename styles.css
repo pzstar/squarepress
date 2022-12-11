@@ -72,7 +72,7 @@ p {
 }
 
 #sq-site-branding img{
-    max-height: 70px;
+    max-height: 42px;
 }
 
 .sq-top-header{
@@ -92,6 +92,7 @@ p {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: auto !important;
 }
 
 .sq-header{

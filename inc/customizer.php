@@ -10,12 +10,12 @@ function squarepress_customize_register($wp_customize) {
     $wp_customize->get_setting('square_h_family')->default = 'Poppins';
     $wp_customize->get_setting('square_menu_family')->default = 'Karla';
     $wp_customize->get_setting('square_menu_style')->default = '400';
-    
+
     $wp_customize->add_panel('squarepress_header_panel', array(
         'title' => esc_html__('Header Settings', 'squarepress'),
         'priority' => 22,
     ));
-    
+
     $wp_customize->get_section('title_tagline')->panel = 'squarepress_header_panel';
     $wp_customize->get_section('square_header_setting_sec')->panel = 'squarepress_header_panel';
     $wp_customize->get_section('square_header_setting_sec')->title = esc_html__('Main Header', 'squarepress');
@@ -128,7 +128,10 @@ function squarepress_customize_register($wp_customize) {
             esc_html__('Option to add menu, widget, html or social icons', 'squarepress'),
             esc_html__('Option to add unlimited and any social media', 'squarepress')
         ),
-        'priority' => 100
+        'priority' => 100,
+        'active_callback' => 'square_is_upgrade_notice_active',
+        'upgrade_text' => esc_html__('Upgrade to PRO', 'square'),
+        'upgrade_url' => 'https://hashthemes.com/wordpress-theme/square-plus/?utm_source=wordpress&utm_medium=square-link&utm_campaign=square-upgrade'
     )));
 
     /* Tab Section */
@@ -287,7 +290,10 @@ function squarepress_customize_register($wp_customize) {
             esc_html__('Configure no of column to display in a row', 'squarepress'),
             esc_html__('Multiple background option(image, gradient, video) for the section', 'squarepress')
         ),
-        'priority' => 100
+        'priority' => 100,
+        'active_callback' => 'square_is_upgrade_notice_active',
+        'upgrade_text' => esc_html__('Upgrade to PRO', 'square'),
+        'upgrade_url' => 'https://hashthemes.com/wordpress-theme/square-plus/?utm_source=wordpress&utm_medium=square-link&utm_campaign=square-upgrade'
     )));
 
     /* ============TESTIMONIAL SECTION============ */
@@ -409,7 +415,10 @@ function squarepress_customize_register($wp_customize) {
             esc_html__('4 testimonial styles', 'squarepress'),
             esc_html__('Multiple background option(image, gradient, video) for the section', 'squarepress')
         ),
-        'priority' => 100
+        'priority' => 100,
+        'active_callback' => 'square_is_upgrade_notice_active',
+        'upgrade_text' => esc_html__('Upgrade to PRO', 'square'),
+        'upgrade_url' => 'https://hashthemes.com/wordpress-theme/square-plus/?utm_source=wordpress&utm_medium=square-link&utm_campaign=square-upgrade'
     )));
 
     $wp_customize->add_setting('squarepress_featured_box_heading', array(

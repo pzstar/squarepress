@@ -477,6 +477,11 @@ p {
 
 
 @media screen and (max-width: 768px){
+    .sq-top-header .sq-container {
+        display: block !important;
+        text-align: center;
+    }
+
     .sq-main-navigation li {
         line-height: 1.8;
     }
@@ -532,6 +537,16 @@ p {
         margin: 0 auto 40px;
         max-width: 400px;
     }
+
+    .sq-site-info,
+    .sq-site-social{
+        float: none;
+        text-align: center;
+    }
+    
+    .sq-site-info{
+        margin-bottom: 10px;
+    }
 }
 
 @media screen and (max-width: 580px){
@@ -542,6 +557,12 @@ p {
     .sq-testimonial-wrap{
         width: 100%;
     }
+
+    .sq-footer {
+        width: auto;
+        float: none;
+        margin: 0 0 20px !important;
+    }
 }
 
 @media screen and (max-width: 480px){
@@ -549,6 +570,7 @@ p {
         display: block;
         text-align: center;
     }
+
     #sq-home-slider-section img{
         height: 350px;
     }

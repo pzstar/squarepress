@@ -5,7 +5,7 @@ Tags: one-column, two-columns, left-sidebar, right-sidebar, custom-background, c
 Requires at least: 5.0
 Requires PHP: 5.0
 Tested up to: 6.1
-Stable tag: 1.1.12
+Stable tag: 1.1.13
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -27,6 +27,9 @@ SquarePress is a flexible responsive multipurpose theme compatible with all brow
 
 
 == Upgrade Notice ==
+= 1.1.13 - Feb 23, 2023 =
+* Customizer link fixed
+
 = 1.1.12 - Dec 11, 2022 =
 * Styling issue fixed
 

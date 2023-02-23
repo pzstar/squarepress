@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: SquarePress\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-27 10:28+0000\n"
+"POT-Creation-Date: 2023-02-23 12:05+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -21,27 +21,20 @@ msgstr ""
 msgid "%1$s by %2$s"
 msgstr ""
 
-#: inc/customizer.php:284
+#: inc/customizer.php:289
 msgid "4 team styles"
 msgstr ""
 
-#: inc/customizer.php:407
+#: inc/customizer.php:415
 msgid "4 testimonial styles"
 msgstr ""
 
-#. To add an additional character subset specific to your language,
-#. translate this to 'greek', 'cyrillic', 'devanagari' or 'vietnamese'. Do not translate into your own language.
-#: functions.php:57
-msgctxt "Add new subset (greek, cyrillic, devanagari, vietnamese)"
-msgid "no-subset"
-msgstr ""
-
-#: inc/customizer.php:176 inc/customizer.php:184 inc/customizer.php:384
-#: inc/customizer.php:393
+#: inc/customizer.php:181 inc/customizer.php:189 inc/customizer.php:392
+#: inc/customizer.php:401
 msgid "Background Image"
 msgstr ""
 
-#: inc/customizer.php:285
+#: inc/customizer.php:290
 msgid "Configure no of column to display in a row"
 msgstr ""
 
@@ -49,35 +42,35 @@ msgstr ""
 msgid "Create website in no time"
 msgstr ""
 
-#: inc/customizer.php:271 inc/customizer.php:373
+#: inc/customizer.php:276 inc/customizer.php:381
 msgid "Designation"
 msgstr ""
 
-#: inc/customizer.php:203
+#: inc/customizer.php:208
 msgid "Disable Team Section "
 msgstr ""
 
-#: inc/customizer.php:305
+#: inc/customizer.php:313
 msgid "Disable Testimonial Section "
 msgstr ""
 
-#: inc/customizer.php:420
+#: inc/customizer.php:431
 msgid "Enable Theme Colored Box"
 msgstr ""
 
-#: inc/customizer.php:431
+#: inc/customizer.php:442
 msgid "Enable/Disable "
 msgstr ""
 
-#: inc/customizer.php:60
+#: inc/customizer.php:62
 msgid "Facebook"
 msgstr ""
 
-#: inc/customizer.php:281 inc/customizer.php:404
+#: inc/customizer.php:286 inc/customizer.php:412
 msgid "For more layouts and settings,"
 msgstr ""
 
-#: inc/customizer.php:124
+#: inc/customizer.php:126
 msgid "For more top header settings,"
 msgstr ""
 
@@ -86,7 +79,7 @@ msgid "Free WordPress Themes"
 msgstr ""
 
 #. Author of the theme
-msgid "Hash Themes"
+msgid "HashThemes"
 msgstr ""
 
 #: inc/customizer.php:15
@@ -105,18 +98,11 @@ msgstr ""
 msgid "https://hashthemes.com/wordpress-theme/squarepress/"
 msgstr ""
 
-#: inc/customizer.php:82
+#: inc/customizer.php:84
 msgid "Instagram"
 msgstr ""
 
-#. If there are characters in your language that are not supported
-#. by Inconsolata, translate this to 'off'. Do not translate into your own language.
-#: functions.php:49
-msgctxt "Karla font: on or off"
-msgid "on"
-msgstr ""
-
-#: inc/customizer.php:115
+#: inc/customizer.php:117
 msgid "LinkedIn"
 msgstr ""
 
@@ -124,38 +110,31 @@ msgstr ""
 msgid "Logo"
 msgstr ""
 
-#: inc/customizer.php:20
+#: inc/customizer.php:21
 msgid "Main Header"
 msgstr ""
 
-#: inc/customizer.php:286 inc/customizer.php:408
+#: inc/customizer.php:291 inc/customizer.php:416
 msgid "Multiple background option(image, gradient, video) for the section"
 msgstr ""
 
-#: inc/customizer.php:126
+#: inc/customizer.php:128
 msgid "Option to add menu, widget, html or social icons"
 msgstr ""
 
-#: inc/customizer.php:127
+#: inc/customizer.php:129
 msgid "Option to add unlimited and any social media"
 msgstr ""
 
-#: inc/customizer.php:104
+#: inc/customizer.php:106
 msgid "Pinterest"
-msgstr ""
-
-#. If there are characters in your language that are not supported
-#. by Open Sans, translate this to 'off'. Do not translate into your own language.
-#: functions.php:41
-msgctxt "Poppins font: on or off"
-msgid "on"
 msgstr ""
 
 #: template-parts/frontpage-sections.php:82
 msgid "Read More"
 msgstr ""
 
-#: inc/customizer.php:260 inc/customizer.php:362
+#: inc/customizer.php:265 inc/customizer.php:370
 msgid "Select a Page"
 msgstr ""
 
@@ -184,63 +163,63 @@ msgid ""
 "com/squarepress"
 msgstr ""
 
-#: inc/customizer.php:164 inc/customizer.php:237 inc/customizer.php:339
+#: inc/customizer.php:169 inc/customizer.php:242 inc/customizer.php:347
 msgid "Sub Title"
 msgstr ""
 
-#: inc/customizer.php:140
+#: inc/customizer.php:145
 msgid "Tab Title / SubTitle"
 msgstr ""
 
-#: inc/customizer.php:249
+#: inc/customizer.php:254
 msgid "Team "
 msgstr ""
 
-#: inc/customizer.php:191
+#: inc/customizer.php:196
 msgid "Team Section"
 msgstr ""
 
-#: inc/customizer.php:215
+#: inc/customizer.php:220
 msgid "Team Title / SubTitle "
 msgstr ""
 
-#: inc/customizer.php:351
+#: inc/customizer.php:359
 msgid "Testimonial "
 msgstr ""
 
-#: inc/customizer.php:293
+#: inc/customizer.php:301
 msgid "Testimonial Section"
 msgstr ""
 
-#: inc/customizer.php:317
+#: inc/customizer.php:325
 msgid "Testimonial Title / SubTitle "
 msgstr ""
 
-#: inc/customizer.php:152 inc/customizer.php:226 inc/customizer.php:328
+#: inc/customizer.php:157 inc/customizer.php:231 inc/customizer.php:336
 msgid "Title"
 msgstr ""
 
-#: inc/customizer.php:26
+#: inc/customizer.php:28
 msgid "Top Header"
 msgstr ""
 
-#: inc/customizer.php:39
+#: inc/customizer.php:41
 msgid "Top left Header Content"
 msgstr ""
 
-#: inc/customizer.php:49
+#: inc/customizer.php:51
 msgid "Top Right Header Socials Icons"
 msgstr ""
 
-#: inc/customizer.php:71
+#: inc/customizer.php:73
 msgid "Twitter"
 msgstr ""
 
-#: inc/customizer.php:283
+#: inc/customizer.php:288
 msgid "Unlimited team blocks"
 msgstr ""
 
-#: inc/customizer.php:406
+#: inc/customizer.php:414
 msgid "Unlimited testimonial blocks"
 msgstr ""
 
@@ -248,6 +227,6 @@ msgstr ""
 msgid "WordPress Theme"
 msgstr ""
 
-#: inc/customizer.php:93
+#: inc/customizer.php:95
 msgid "Youtube"
 msgstr ""

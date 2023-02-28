@@ -64,8 +64,8 @@ if (is_array($square_page_array)) {
                     if ($query->have_posts()):
                         while ($query->have_posts()) : $query->the_post();
                             ?>
-                            <div class="sq-featured-post <?php echo esc_attr($square_featured_class) . ' sq-featured-post' . $i // WPCS: XSS OK.;                          ?>">
-                                <div class="sq-featured-icon"><i class="fa <?php echo esc_attr($square_featured_page_icon); ?>"></i></div>
+                            <div class="sq-featured-post <?php echo esc_attr($square_featured_class) . ' sq-featured-post' . $i; ?>">
+                                <div class="sq-featured-icon"><i class="<?php echo esc_attr($square_featured_page_icon); ?>"></i></div>
                                 <h4><?php the_title(); ?></h4>
                                 <div class="sq-featured-excerpt">
                                     <?php
@@ -79,7 +79,7 @@ if (is_array($square_page_array)) {
                                 <?php
                                 if ($square_enable_featured_link) {
                                     ?>
-                                    <a href="<?php the_permalink(); ?>" class="sq-featured-readmore"><?php echo esc_html__('Read More', 'squarepress') ?><i class="fa fa-angle-right"></i></a>
+                                    <a href="<?php the_permalink(); ?>" class="sq-featured-readmore"><?php echo esc_html__('Read More', 'squarepress') ?><i class="fa-solid fa-angle-right"></i></a>
                                     <?php
                                 }
                                 ?>
@@ -155,7 +155,7 @@ if (!$square_disable_tab_sec) {
                         ?>
                         <li class="sq-tab-list<?php echo $i; ?>">
                             <a href="#<?php echo 'sq-tab' . $i; ?>">
-                                <?php echo '<i class="fa ' . esc_attr($square_tab_icon) . '"></i><span>' . esc_html($square_tab_title) . '</span>'; ?>
+                                <?php echo '<i class="' . esc_attr($square_tab_icon) . '"></i><span>' . esc_html($square_tab_title) . '</span>'; ?>
                             </a>
                         </li>
                         <?php

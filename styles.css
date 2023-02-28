@@ -129,7 +129,7 @@ p {
 }
 
 .sq-main-navigation li{
-    line-height: 90px;
+    line-height: 82px;
 }
 
 .sq-main-navigation ul ul a{
@@ -240,7 +240,7 @@ p {
     background: var(--square-template-color, #5bc2ce);
 }
 
-.sq-featured-post.theme-colored-box .sq-featured-icon .fa,
+.sq-featured-post.theme-colored-box .sq-featured-icon i,
 .sq-featured-post.theme-colored-box h4,
 .sq-featured-post.theme-colored-box .sq-featured-excerpt,
 .sq-featured-post.theme-colored-box .sq-featured-readmore{

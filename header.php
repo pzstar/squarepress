@@ -25,7 +25,14 @@
             $square_sticky_header_class = ($square_sticky_header) ? ' disable-sticky' : '';
 
             $squarepress_left_header_text = get_theme_mod('squarepress_left_header_text', 'Aveneu Park, Starling, Australia');
-            $squarepress_social_icons = array('facebook', 'twitter', 'instagram', 'youtube', 'pinterest', 'linkedin');
+            $squarepress_social_icons = array(
+                'facebook' => 'facebook-f', 
+                'twitter'=> 'x-twitter', 
+                'instagram'=> 'instagram', 
+                'youtube'=> 'youtube', 
+                'pinterest'=> 'pinterest', 
+                'linkedin'=> 'linkedin'
+                );
             ?>
             <header id="sq-masthead" class="sq-site-header <?php echo esc_attr($square_header_bg . $square_sticky_header_class); ?>">
 
@@ -37,10 +44,10 @@
 
                         <div class="sq-top-right-header">
                             <?php
-                            foreach ($squarepress_social_icons as $squarepress_social_icon) {
-                                $squarepress_social_link = get_theme_mod('squarepress_' . $squarepress_social_icon . '_link');
+                            foreach ($squarepress_social_icons as $squarepress_social_key => $squarepress_social_icon) {
+                                $squarepress_social_link = get_theme_mod('squarepress_' . $squarepress_social_key . '_link');
                                 if ($squarepress_social_link) {
-                                    echo '<a href="' . esc_url($squarepress_social_link) . '"><i class="fa fa-' . esc_attr($squarepress_social_icon) . '"></i></a>';
+                                    echo '<a href="' . esc_url($squarepress_social_link) . '"><i class="fab fa-' . esc_attr($squarepress_social_icon) . '"></i></a>';
                                 }
                             }
                             ?>

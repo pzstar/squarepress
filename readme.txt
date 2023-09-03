@@ -4,8 +4,8 @@ Contributors: HashThemes
 Tags: one-column, two-columns, left-sidebar, right-sidebar, custom-background, custom-colors, custom-header, custom-menu, featured-images, footer-widgets, full-width-template, theme-options, threaded-comments, translation-ready, e-commerce, photography, portfolio, rtl-language-support
 Requires at least: 5.0
 Requires PHP: 5.0
-Tested up to: 6.1
-Stable tag: 1.1.14
+Tested up to: 6.3
+Stable tag: 1.1.15
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -27,6 +27,9 @@ SquarePress is a flexible responsive multipurpose theme compatible with all brow
 
 
 == Upgrade Notice ==
+= 1.1.15 - Sep 03, 2023 =
+* Compatibility test with WordPress v 6.3 and Twitter icon updated.
+
 = 1.1.14 - Feb 28, 2023 =
 * Minor CSS issue fixed
 

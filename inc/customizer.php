@@ -130,7 +130,7 @@ function squarepress_customize_register($wp_customize) {
         ),
         'priority' => 100,
         'active_callback' => 'square_is_upgrade_notice_active',
-        'upgrade_text' => esc_html__('Upgrade to PRO', 'square'),
+        'upgrade_text' => esc_html__('Upgrade to PRO', 'squarepress'),
         'upgrade_url' => 'https://hashthemes.com/wordpress-theme/square-plus/?utm_source=wordpress&utm_medium=square-link&utm_campaign=square-upgrade'
     )));
 
@@ -292,7 +292,7 @@ function squarepress_customize_register($wp_customize) {
         ),
         'priority' => 100,
         'active_callback' => 'square_is_upgrade_notice_active',
-        'upgrade_text' => esc_html__('Upgrade to PRO', 'square'),
+        'upgrade_text' => esc_html__('Upgrade to PRO', 'squarepress'),
         'upgrade_url' => 'https://hashthemes.com/wordpress-theme/square-plus/?utm_source=wordpress&utm_medium=square-link&utm_campaign=square-upgrade'
     )));
 
@@ -417,7 +417,7 @@ function squarepress_customize_register($wp_customize) {
         ),
         'priority' => 100,
         'active_callback' => 'square_is_upgrade_notice_active',
-        'upgrade_text' => esc_html__('Upgrade to PRO', 'square'),
+        'upgrade_text' => esc_html__('Upgrade to PRO', 'squarepress'),
         'upgrade_url' => 'https://hashthemes.com/wordpress-theme/square-plus/?utm_source=wordpress&utm_medium=square-link&utm_campaign=square-upgrade'
     )));
 

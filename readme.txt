@@ -1,18 +1,14 @@
 === SquarePress ===
-
-Contributors: HashThemes
-Tags: one-column, two-columns, left-sidebar, right-sidebar, custom-background, custom-colors, custom-header, custom-menu, featured-images, footer-widgets, full-width-template, theme-options, threaded-comments, translation-ready, e-commerce, photography, portfolio, rtl-language-support
-Requires at least: 5.0
-Requires PHP: 5.0
+Contributors: hashthemes
+Requires at least: 6.3
 Tested up to: 6.7
 Stable tag: 1.1.16
+Requires PHP: 7.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-SquarePress WordPress Theme, Copyright HashThemes 2022
-SquarePress is distributed under the terms of the GNU GPL v2 or later.
 
-SquarePress WordPress Theme is the child theme of Square Theme, Copyright HashThemes 2019
+SquarePress WordPress Theme is the child theme of Square Theme, Copyright HashThemes 2025
 SquarePress is distributed under the terms of the GNU GPL v2 or later.
 
 == Description ==

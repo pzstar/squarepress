@@ -1,9 +1,9 @@
 === SquarePress ===
 Contributors: hashthemes
 Requires at least: 6.3
-Tested up to: 6.7
-Stable tag: 1.1.17
-Requires PHP: 7.4
+Tested up to: 6.9
+Stable tag: 1.1.18
+Requires PHP: 7.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -23,6 +23,9 @@ SquarePress is a flexible responsive multipurpose theme compatible with all brow
 
 
 == Upgrade Notice ==
+= 1.1.18 - Dec 07, 2025 =
+* Compatibility test with WordPress version 6.9
+
 = 1.1.17 - Feb 28, 2025 =
 * Escaping translation text
 

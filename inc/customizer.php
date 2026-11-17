@@ -92,7 +92,7 @@ function squarepress_customize_register($wp_customize) {
         'settings' => 'squarepress_youtube_link',
         'section' => 'squarepress_top_header',
         'type' => 'text',
-        'label' => esc_html__('Youtube', 'squarepress')
+        'label' => esc_html__('YouTube', 'squarepress')
     ));
 
     $wp_customize->add_setting('squarepress_pinterest_link', array(
@@ -130,7 +130,7 @@ function squarepress_customize_register($wp_customize) {
         ),
         'priority' => 100,
         'active_callback' => 'square_is_upgrade_notice_active',
-        'upgrade_text' => esc_html__('Upgrade to PRO', 'squarepress'),
+        'upgrade_text' => esc_html__('Upgrade to Pro', 'squarepress'),
         'upgrade_url' => 'https://hashthemes.com/wordpress-theme/square-plus/?utm_source=wordpress&utm_medium=square-link&utm_campaign=square-upgrade'
     )));
 
@@ -202,12 +202,11 @@ function squarepress_customize_register($wp_customize) {
         'sanitize_callback' => 'absint'
     ));
 
-    $wp_customize->add_control('squarepress_disable_team_sec', array(
+    $wp_customize->add_control(new Square_Toggle_Control($wp_customize, 'squarepress_disable_team_sec', array(
         'settings' => 'squarepress_disable_team_sec',
         'section' => 'squarepress_team_sec',
-        'label' => esc_html__('Disable Team Section ', 'squarepress'),
-        'type' => 'checkbox',
-    ));
+        'label' => esc_html__('Disable Team Section', 'squarepress')
+    )));
 
 
     $wp_customize->add_setting('squarepress_team_heading', array(
@@ -292,7 +291,7 @@ function squarepress_customize_register($wp_customize) {
         ),
         'priority' => 100,
         'active_callback' => 'square_is_upgrade_notice_active',
-        'upgrade_text' => esc_html__('Upgrade to PRO', 'squarepress'),
+        'upgrade_text' => esc_html__('Upgrade to Pro', 'squarepress'),
         'upgrade_url' => 'https://hashthemes.com/wordpress-theme/square-plus/?utm_source=wordpress&utm_medium=square-link&utm_campaign=square-upgrade'
     )));
 
@@ -307,12 +306,11 @@ function squarepress_customize_register($wp_customize) {
         'sanitize_callback' => 'absint'
     ));
 
-    $wp_customize->add_control('squarepress_disable_testimonial_sec', array(
+    $wp_customize->add_control(new Square_Toggle_Control($wp_customize, 'squarepress_disable_testimonial_sec', array(
         'settings' => 'squarepress_disable_testimonial_sec',
         'section' => 'squarepress_testimonial_sec',
-        'label' => esc_html__('Disable Testimonial Section ', 'squarepress'),
-        'type' => 'checkbox',
-    ));
+        'label' => esc_html__('Disable Testimonial Section', 'squarepress')
+    )));
 
 
     $wp_customize->add_setting('squarepress_testimonial_heading', array(
@@ -417,7 +415,7 @@ function squarepress_customize_register($wp_customize) {
         ),
         'priority' => 100,
         'active_callback' => 'square_is_upgrade_notice_active',
-        'upgrade_text' => esc_html__('Upgrade to PRO', 'squarepress'),
+        'upgrade_text' => esc_html__('Upgrade to Pro', 'squarepress'),
         'upgrade_url' => 'https://hashthemes.com/wordpress-theme/square-plus/?utm_source=wordpress&utm_medium=square-link&utm_campaign=square-upgrade'
     )));
 
@@ -428,7 +426,7 @@ function squarepress_customize_register($wp_customize) {
     $wp_customize->add_control(new Square_Heading_Control($wp_customize, 'squarepress_featured_box_heading', array(
         'settings' => 'squarepress_featured_box_heading',
         'section' => 'square_featured_page_sec',
-        'label' => esc_html__('Enable Theme Colored Box', 'squarepress'),
+        'label' => esc_html__('Box Style', 'squarepress'),
     )));
 
     $wp_customize->add_setting('squarepress_enable_colored_box', array(
@@ -436,12 +434,11 @@ function squarepress_customize_register($wp_customize) {
         'sanitize_callback' => 'absint'
     ));
 
-    $wp_customize->add_control('squarepress_enable_colored_box', array(
+    $wp_customize->add_control(new Square_Toggle_Control($wp_customize, 'squarepress_enable_colored_box', array(
         'settings' => 'squarepress_enable_colored_box',
         'section' => 'square_featured_page_sec',
-        'label' => esc_html__('Enable/Disable ', 'squarepress'),
-        'type' => 'checkbox',
-    ));
+        'label' => esc_html__('Fill the Boxes with the Theme Color', 'squarepress')
+    )));
 }
 
 add_action('customize_register', 'squarepress_customize_register', 50);
